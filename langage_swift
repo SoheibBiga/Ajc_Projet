@@ -1,0 +1,21 @@
+* Commentaire
+
+// pour une ligne
+/* */ Pour un bloc
+
+
+* Variables
+
+Sans préciser le type
+var nb = 2
+
+Precise le type en declaration + initialisation
+
+var nb: Int
+nb = 2
+
+var nb: Int = 2
+
+Type acceptés : Int Double String Bool
+
+
