@@ -1,0 +1,18 @@
+inline int carre(int nombre);
+
+int main()
+{
+    cout << carre(10) << endl;
+
+    return 0;
+}
+
+inline int carre(int nombre)
+{
+    return nombre * nombre;
+}
+Vous voyez que j'ai ajouté le mot-clé inline au début du prototype ET au début de la définition de la fonction. Cela signifie pour le compilateur "A chaque fois qu'on fera appel à la fonction carre, je placerai directement le code de cette fonction à l'endroit de l'appel".
+La fonction inline disparaît complètement après compilation. Tout son code se trouve placé à l'endroit de l'appel (la ligne du cout dans notre cas).
+
+L'avantage est que l'exécution du programme sera plus rapide, surtout si la fonction est appelée plusieurs fois. En effet, lors d'un appel "classique" de fonction, le processeur va sauter à l'adresse de la fonction en mémoire, retenir l'adresse où il en était pour revenir à la fonction appelante une fois l'autre fonction terminée... Bref, c'est très rapide, mais si la fonction est amenée à être appelée très souvent, il est préférable d'en faire une inline (on dit l'inliner :-° ) pour éviter de répéter tout ce processus.
+Le défaut, c'est que le programme risque de grossir un peu une fois compilé (le même code étant répété dans l'exécutable). Mais bon, en général cette différence est quand même négligeable ;)

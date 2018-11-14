@@ -1,0 +1,8 @@
+int nombreDeSecondes(int heures, int minutes = 0, int secondes = 0);
+
+Seulement dans le PROTOTYPE !!
+Les valeurs par défaut doivent se trouver à la fin de la liste des paramètres ("à droite").
+Dans cet exemple, seul le paramètre heures sera obligatoire, les deux autres étant désormais facultatifs. Si on ne renseigne pas les minutes et les secondes, les variables vaudront alors 0 dans la fonction.
+Ainsi on peut faire :
+nombreDeSecondes(1)
+nombreDeSecondes(1, 10)

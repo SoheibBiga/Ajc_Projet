@@ -1,0 +1,36 @@
+D'habitude
+int main()
+{
+    int *variable = NULL;
+
+    variable = malloc(sizeof(int)); // Allocation de mémoire
+
+    free(variable); // Libération de mémoire
+
+    return 0;
+}
+
+Particularité c++
+int main()
+{
+    int *variable = NULL;
+
+    variable = new int; // Allocation de mémoire
+
+    delete variable; // Libération de mémoire
+
+    return 0;
+}
+
+Pour un tableau
+
+int main()
+{
+    int *tableau = NULL;
+
+    tableau = new int[taille]; // Allocation de mémoire (tableau) taille est une variable.s
+
+    delete[] tableau; // Libération de mémoire (tableau)
+
+    return 0;
+}

@@ -1,0 +1,13 @@
+int const tailleTableau(20);   //La taille du tableau
+double anglesIcosagone[tailleTableau];
+
+on ne peut pas écrire une fonction qui renvoie un tableau statique. C'est impossible.
+
+La deuxième restriction est qu'un tableau statique est toujours passé par référence. Et il n'y a pas besoin d'utiliser l'esperluette (&) : c'est fait automatiquement. Cela veut dire que, lorsqu'on passe un tableau à une fonction, cette dernière peut le modifier.
+
+declaration fonction avec argument tableau
+
+void fonction(double tableau[])
+{..)
+
+La taille ! À l'intérieur de la fonction précédente, il n'y a aucun moyen de connaître la taille du tableau ! Il faut donc impérativement ajouter un deuxième argument contenant la taille.

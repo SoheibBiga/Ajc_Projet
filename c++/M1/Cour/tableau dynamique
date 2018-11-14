@@ -1,0 +1,22 @@
+#include <vector> //Ne pas oublier !-
+
+vector<int> tableau(5);
+vector<int> tableau(5, 3);  //Crée un tableau de 5 entiers valant tous 3
+vector<double> tableau; //Crée un tableau de 0 nombre à virgule
+
+acces aux valeurs comme les tableaux statiques
+
+tableau[0] = 31415;
+
+Changer la taille
+vector<int> tableau(3,2);  //Un tableau de 3 entiers valant tous 2
+tableau.push_back(8); //On ajoute une 4ème case au tableau qui contient la valeur 8
+
+On peut supprimer la dernière case d'un tableau en utilisant la fonction pop_back()
+tableau.pop_back();
+
+Taille du tableau
+tableau.size();
+
+existe en multi dim
+voir : https://openclassrooms.com/courses/programmez-avec-le-langage-c/les-tableaux-5

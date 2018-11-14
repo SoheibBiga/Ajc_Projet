@@ -1,0 +1,10 @@
+On écrit friend suivi du prototype de la fonction et on place le tout à l'intérieur de la classe :
+
+class Duree{
+    public:
+    Duree(int heures = 0, int minutes = 0, int secondes = 0);
+    private:
+    void affiche(ostream& out) const;  //Permet d'écrire la durée dans un flux
+
+    friend std::ostream& operator<< (std::ostream& flux, Duree const& duree);
+};

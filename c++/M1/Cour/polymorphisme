@@ -1,0 +1,20 @@
+ajouté virtual seulement dans le prototype, le .h
+virtual void affiche();
+
+Il faut utilisé des reference ou des pointeur par la suite.
+void presenter(Vehicule const& v){ v.affiche();}   //Présente le véhicule passé en argument
+
+Un destructeur doit toujours être virtuel si on utilise le polymorphisme.
+virtual ~Vehicule(); 
+
+Collection hétérogène
+vector<Vehicule*> listeVehicules;
+
+virtual pure
+Dans toutes les classes filles de Vehicule, il y a une fonction nommée nbrRoues()qui renvoie un int et qui ne prend aucun argument mais, dans la classe Vehicule, cette fonction n'existe pas.
+Pour déclarer une telle méthode, rien de plus simple. Il suffit d'ajouter « = 0 » à la fin du prototype.
+class Vehicule{ 
+virtual int nbrRoues() const = 0;
+};
+
+Vehicule est dit classe abstraite 

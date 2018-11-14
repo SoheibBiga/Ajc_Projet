@@ -1,0 +1,5 @@
+soit un Point.hpp et Point.cpp et main.cpp
+
+on compile d'abord g++ --std=c++11 -Wall -c Note.cpp
+=> génère .o
+g++ --std=c++11 -Wall -o exec Main.cpp Point.o 

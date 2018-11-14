@@ -1,0 +1,49 @@
+class Personnage{
+    public:
+
+    //Quelques méthodes…
+
+    private:
+
+    Arme *m_arme;
+    //L'Arme est un pointeur, l'objet n'est plus contenu dans le Personnage
+    //…
+};
+
+Dans notre cas, nous sommes obligés de faire une allocation dynamique, donc d'utiliser new
+Par sécurité, on initialise d'abord le pointeur à 0 dans la liste d'initialisation puis on fait l'allocation avec le new entre les accolades du constructeur.
+Voici ce que cela donne dans le constructeur par défaut :
+
+Personnage::Personnage() : m_arme(0), m_vie(100), m_mana(100){
+    m_arme = new Arme();
+}
+
+Désallocation de mémoire pour l'objet
+Il faut faire un delete de l'Arme dans le destructeur du personnage afin que l'Arme soit supprimée avant le personnage. Le code est tout simple :
+Personnage::~Personnage(){
+    delete m_arme;
+}
+
+Attention aux constructeur de copie lorsqu'il y a un pointeur dans la classe :
+Personnage::Personnage(Personnage const& personnageACopier) 
+   : m_vie(personnageACopier.m_vie), m_mana(personnageACopier.m_mana), m_arme(0){
+    m_arme = new Arme(*(personnageACopier.m_arme));
+}
+
+Si on fait un constructeur de copie il faut aussi obligatoirement écrire une surcharge de operator=.
+
+Personnage& Personnage::operator=(Personnage const& personnageACopier) {
+    if(this != &personnageACopier)
+    //On vérifie que l'objet n'est pas le même que celui reçu en argument
+    {
+        m_vie = personnageACopier.m_vie; //On copie tous les champs
+        m_mana = personnageACopier.m_mana;
+	delete m_arme;
+        m_arme = new Arme(*(personnageACopier.m_arme));
+    }
+    return *this; //On renvoie l'objet lui-même
+}
+
+
+Plus d'info :
+https://openclassrooms.com/courses/programmez-avec-le-langage-c/classes-et-pointeurs

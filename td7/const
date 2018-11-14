@@ -1,2 +1,0 @@
-On peut caste quelque chose de non const en const mais pas le contraire
-return un nombre c’est return une variable locale

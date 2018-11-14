@@ -1,1 +1,0 @@
-Le code ne compilera plus, on ne sait plus de quel fonction on parle pour this->a(), entre int a() et int a(int a=77) puisque elle peut être appelée sans argument.

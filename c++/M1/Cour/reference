@@ -1,0 +1,28 @@
+Si on met pas de reference
+int ajouteDeux(int a){
+    a+=2;
+    return a;
+}
+
+resultat = ajouteDeux(4);
+
+Le programme évalue la valeur de nombre. Il trouve 4.
+Le programme alloue un nouvel espace dans la mémoire et y écrit la valeur 4. Cet espace mémoire possède l'étiquette a, le nom de la variable dans la fonction.
+Le programme entre dans la fonction.
+Le programme ajoute 2 à la variable a.
+La valeur de a est ensuite copiée et affectée à la variable resultat, qui vaut donc maintenant 6.
+On sort alors de la fonction.
+
+Si reference 
+int ajouteDeux(int& a)!{
+    a+=2;
+    return a;
+}
+Lorsque l'on appelle la fonction, il n'y a plus de copie. Le programme donne simplement un alias à la variable nombre. Jetons un coup d'œil à la mémoire dans ce cas (figure suivante).
+
+Le passage par référence constante
+Si on veut en plus ne pas pouvoir modifier l'argument
+
+void f1(string texte);  //Implique une copie coûteuse de 'texte'
+void f1(string& texte);  //Implique que la fonction peut modifier 'texte' 
+void f1(string const& texte);  //Pas de copie et pas de modification possible

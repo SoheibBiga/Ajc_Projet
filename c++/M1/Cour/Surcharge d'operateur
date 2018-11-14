@@ -1,0 +1,25 @@
+Prototype en dehors de la classe sauf pour le += ce qui est logique puisque s'applique comme une methode de la classe avec object.methode
+
+Declaration :
+
+Duree operator+(Duree const& a, Duree const& b);
+
+std::ostream& operator<<(std::ostream& out, Duree const& duree);
+
+bool operator==(Duree const& a, Duree const& b);
+
+Corps de la fonction 
+
+ostream& operator<<(ostream& out, Duree const& duree){
+    duree.afficher(out) ;
+    return out;
+}
+
+bool operator==(Duree const& a, Duree const& b){
+    return a.estEgal(b);
+}
+
+Explication du += :
+La différence est que cet opérateur change l'entier auquel il est appliqué, ce qui n'est pas le cas du + "normal" qui lui ne modifie pas ses deux opérandes. Imaginons un instant que vous vouliez écrire un tel opérateur pour votre classe Duree. Cet opérateur va devoir modifier l'objet qui l'utilise. Pour respecter l'encapsulation, il va donc falloir déclarer cet opérateur comme étant une méthode de la classe Duree et pas comme une fonction externe.
+
+Plus d'info : https://openclassrooms.com/courses/programmez-avec-le-langage-c/la-surcharge-d-operateurs

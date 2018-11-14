@@ -1,0 +1,37 @@
+Pour les fonctions templates, c'est différent. TOUT doit obligatoirement se trouver dans le fichier .h, sinon votre programme ne pourra pas compiler.
+
+template <typename T> ou <class T>
+T maximum(const T& a, const T& b){ifa<b return a...}
+
+Il faut juste indiquer entre des chevrons quelle « version » de la fonction on souhaite utiliser : maximum<double>(pi,e);
+
+Plusieurs para : 
+template<typename T, typename S>
+S moyenne(T tableau[], int taille){...}
+
+Specialisation :
+template <>
+string maximum<string>(const string& a, const string& b){…}
+
+Il faut respecter un ordre particulier la fonction générique puis les fonctions spécialisées.
+
+Class template :
+template <typename T> ou <class T>
+class Rectangle{
+    //…
+};
+
+Si on veut séparer la declaration du corps, on doit quand meme reste dans le .h
+template <typename T>
+class Rectangle{
+public:
+   T hauteur() const; 
+};
+
+template<typename T>
+T Rectangle<T>::hauteur() const{
+   return m_haut-m_bas;
+}
+
+Instanciation d'une classe template
+Rectangle<double> monRectangle(1.0, 4.5, 3.1, 5.2);

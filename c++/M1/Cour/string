@@ -1,0 +1,24 @@
+#include <string>
+
+initialiser
+string maChaine("Bonjour !"); ou  string maChaine = "Bonjour !";
+
+changer sa valeur
+maChaine = "Bien le bonjour !";
+
+-> fonctionne comme un tableau.
+On peut accede à maChaine comme pour un tableau maChaine[0]…
+size();
+push_back();
+on peut aussi faire directement +=
+
+erase(); Cette méthode très simple supprime tout le contenu de la chaîne :
+
+string substr( size_type index, size_type num = npos );
+
+Cette méthode renvoie donc un objet de type string. Ce sera la sous-chaîne obtenue après « découpage ».
+Elle prend deux paramètres ou, plus exactement, un paramètre obligatoire et un paramètre facultatif. En effet, num possède une valeur par défaut (npos), ce qui fait que le second paramètre ne doit pas obligatoirement être renseigné. Voyons plus en détail ce qui se cache sous ces paramètres :
+
+index permet d'indiquer à partir de quel caractère on doit couper (ce doit être un numéro de caractère).
+num permet d'indiquer le nombre de caractères que l'on prend. Par défaut, la valeur est npos, ce qui revient à prendre tous les caractères qui restent. Si vous indiquez 2, la méthode ne renverra que 2 caractères.
+
