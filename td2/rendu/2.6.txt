@@ -1,0 +1,1 @@
+Le problème de stack overflow n’apparaît pas pour cette fonction car la profondeur de la fonction pgcd est moins grande que celle de fibonacci 

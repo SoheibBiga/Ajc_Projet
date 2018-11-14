@@ -9,7 +9,7 @@
 Sans préciser le type
 var nb = 2
 
-Precise le type en declaration + initialisation
+- Precise le type en declaration + initialisation
 
 var nb: Int
 nb = 2
@@ -17,5 +17,30 @@ nb = 2
 var nb: Int = 2
 
 Type acceptés : Int Double String Bool
+
+- Declarer une constante
+
+let nb = 3
+
+- Les tuples
+
+Peut-etre une var ou une constante
+
+var tuple = (valeur1, valeur2,...)
+let tuple
+
+Pour récuperer les valeurs d'un tuple
+
+var (valeur1, valeur2,...) = tuple
+
+var (valeur1,_) = tuple recupere que valeur1
+
+
+Donner un nom aux valeurs
+
+var tuple = (nom: valeur1, code: valeur2,...)
+
+On peut donc récuperer valeur1 en faisant :
+var x = tuple.nom
 
 
